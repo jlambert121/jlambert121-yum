@@ -1,0 +1,18 @@
+{
+  "name": "evenup-yum",
+  "version": "0.1.0",
+  "author": "evenup",
+  "summary": "Manages installed repos through hiera",
+  "license": "Apache 2.0",
+  "source": "https://github.com/evenup/evenup-yum",
+  "project_page": "https://github.com/evenup/evenup-yum",
+  "issues_url": "https://github.com/evenup/evenup-yum/issues",
+  "tags": [ "yum" ],
+    "operatingsystem_support": [
+      { "operatingsystem": "RedHat", "operatingsystemrelease": [ "6", "7" ] },
+      { "operatingsystem": "CentOS", "operatingsystemrelease": [ "6", "7" ] },
+    ],
+  "dependencies": [
+    { "name": "puppetlabs/stdlib", "version_requirement": ">=3.2.0 <5.0.0" }
+  ]
+}
