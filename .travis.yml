@@ -1,7 +1,9 @@
 ---
 language: ruby
-bundler_args: --without system_tests
+cache: bundler
+bundler_args: --without system_tests development
 script: "bundle exec rake validate && bundle exec rake test SPEC_OPTS='--format documentation'"
+sudo: false
 matrix:
   fast_finish: true
   include:
@@ -57,6 +59,9 @@ notifications:
   email: false
   hipchat:
     rooms:
-      - secure: kJepCbwHlDTiUyaSaT/lKcYLjkS7YDh+ehXQqGC+ki7C1xWNkH0nvyPREqQEvxcWS1/9qNWyrtij5GTv+fh5Vs+/UChwKOsJF+HENHU0Df1+yduiOx7QfzTZ1njr4gON8Dh0Mjs/7eQPluDVxvByAwNg8/WeY4Z0ghsnCcTL7uQ=
+      - secure: ATK7yUkRCJU2AzfhUB9YwbxeN3+t4xIoW73puXgVaJp9DmAck29gffAKU48YfzkBMBp1DuTHy6UeiiaDwJYA9GKpyiKOyTtQdIret0gvXAvkEmqRHOgZWPr/oLoHhuveWgtVIYnFTkr4NJj60y6PvZYmNAIOF6a6Zu40QoW6pFw=
+    template:
+      - '%{repository}#%{build_number} (%{branch} - %{commit} : %{author}): %{message} (<a href="%{build_url}">Details</a>/<a href="%{compare_url}">Change view</a>)'
+    format: html
   on_success: always
   on_failure: always
