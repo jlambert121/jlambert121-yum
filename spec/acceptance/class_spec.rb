@@ -5,7 +5,6 @@ describe 'yum classes' do
   context 'defaults' do
     case fact('operatingsystemmajrelease')
     when '6'
-#      shell('curl -o /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-6 https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6')
       pp = <<-EOS
       class { 'yum': repos => {
         "epel" => {
@@ -16,7 +15,6 @@ describe 'yum classes' do
       }}
       EOS
     when '7'
-#      shell('curl -o /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7 https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7')
       pp = <<-EOS
       class { 'yum': repos => {
         "epel" => {

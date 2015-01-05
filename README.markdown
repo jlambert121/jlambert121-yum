@@ -52,12 +52,12 @@ Hash of repos to include on the system
       "epel" => {
         "descr"     => 'Extra Packages for Enterprise Linux 6 - x86_64',
         "baseurl"   => 'http://download.fedoraproject.org/pub/epel/6/$basearch',
-        "gpgkey"    => '/etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-6'
+        "gpgkey"    => 'https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6'
       },
       "corp_repo" => {
         "descr"     => 'Local corporate repo',
-        "baseurl"   => 'http://yum.example.com/6/$basearch',
-        "gpgkey"    => '/etc/pki/rpm-gpg/RPM-GPG-KEY-corp'
+        "baseurl"   => 'https://yum.example.com/6/$basearch',
+        "gpgkey"    => 'https://yum.example.com/RPM-GPG-KEY-corp'
       }
     }
   }
