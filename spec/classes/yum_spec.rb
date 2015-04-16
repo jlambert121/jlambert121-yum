@@ -3,8 +3,7 @@ require 'spec_helper'
 describe 'yum' do
   let(:facts) { { :osfamily => 'RedHat' } }
 
-  context 'create repos' do
-    let(:params) { { :repos => {
+  repos = {
       "epel" => {
         "descr"     => 'Extra Packages for Enterprise Linux 6 - x86_64',
         "baseurl"   => 'http://download.fedoraproject.org/pub/epel/6/$basearch',
@@ -15,7 +14,10 @@ describe 'yum' do
         "baseurl"   => 'http://yum.example.com/6/$basearch',
         "gpgkey"    => '/etc/pki/rpm-gpg/RPM-GPG-KEY-corp'
       }
-    }}}
+    }
+
+  context 'create repos' do
+    let(:params) { { :repos => repos } }
 
     it { should contain_yumrepo('epel') }
     it { should contain_yumrepo('corp_repo')}
@@ -26,6 +28,14 @@ describe 'yum' do
     let(:params) { { :gpg_source => 'puppet:///data/yum/gpg_keys' } }
 
     it { should contain_file('/etc/pki/rpm-gpg').with(:source => 'puppet:///data/yum/gpg_keys') }
+  end
+
+  describe 'purge repos' do
+    let(:params) { { :repos => repos, :purge => true } }
+
+    it { should contain_file('/etc/yum.repos.d/epel.repo') }
+    it { should contain_file('/etc/yum.repos.d/corp_repo.repo') }
+    it { should contain_file('/etc/yum.repos.d/').with(:purge => true) }
   end
 
   describe 'yum class on unsupported OS' do
