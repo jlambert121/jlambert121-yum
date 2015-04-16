@@ -1,3 +1,4 @@
-YYYY-MM-DD Release 0.1.0
-- something you did
-- something else you did
+20150416 - v0.1.1
+  Rework purging of undefined repos
+20150105 - v0.1.0
+  Initial release
