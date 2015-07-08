@@ -19,7 +19,7 @@ class yum (
   validate_hash($repos)
 
   if $purge {
-    create_resources(file, hash_to_repo_file($repos) )
+    create_resources(file, hash_to_repo_file(hiera_hash('yum::repos',$repos) ) )
 
     file { '/etc/yum.repos.d/':
       ensure  => 'directory',
@@ -28,7 +28,7 @@ class yum (
     }
   }
 
-  create_resources(yumrepo, $repos, $defaults)
+  create_resources(yumrepo, hiera_hash('yum::repos',$repos), $defaults)
 
   if $gpg_source {
     file { '/etc/pki/rpm-gpg':
