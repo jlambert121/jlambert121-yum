@@ -1,12 +1,12 @@
 {
-  "name": "evenup-yum",
-  "version": "0.1.1",
-  "author": "evenup",
+  "name": "jlambert121-yum",
+  "version": "0.2.0",
+  "author": "jlambert121",
   "summary": "Manages installed repos through hiera",
   "license": "Apache-2.0",
-  "source": "https://github.com/evenup/evenup-yum",
-  "project_page": "https://github.com/evenup/evenup-yum",
-  "issues_url": "https://github.com/evenup/evenup-yum/issues",
+  "source": "https://github.com/jlambert121/jlambert121-yum",
+  "project_page": "https://github.com/jlambert121/jlambert121-yum",
+  "issues_url": "https://github.com/jlambert121/jlambert121-yum/issues",
   "tags": [ "yum" ],
     "operatingsystem_support": [
       { "operatingsystem": "RedHat", "operatingsystemrelease": [ "6", "7" ] },

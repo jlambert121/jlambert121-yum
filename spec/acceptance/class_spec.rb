@@ -1,7 +1,6 @@
 require 'spec_helper_acceptance'
 
 describe 'yum classes' do
-
   context 'defaults' do
     case fact('operatingsystemmajrelease')
     when '6'
@@ -35,7 +34,5 @@ describe 'yum classes' do
     describe command('yum -y install aspell-en') do
       its(:exit_status) { should eq 0 }
     end
-
   end
-
 end

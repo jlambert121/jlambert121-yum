@@ -16,5 +16,4 @@ describe "the hash_to_repo_file function" do
     result = scope.function_hash_to_repo_file([repos])
     expect(result).to(eq({'/etc/yum.repos.d/repo1.repo' => {}, '/etc/yum.repos.d/repo2.repo' => {}}))
   end
-
 end

@@ -6,8 +6,7 @@ module Puppet::Parser::Functions
   newfunction(:hash_to_repo_file, :type => :rvalue, :doc => <<-EOS
     Returns the filenames of yum repos to allow purging unused repos
     EOS
-  ) do |arguments|
-
+             ) do |arguments|
     raise(Puppet::ParseError, "hash_to_repo_file(): Wrong number of arguments " +
       "given (#{arguments.size} for 1)") if arguments.size < 1
 
@@ -19,6 +18,5 @@ module Puppet::Parser::Functions
     end
 
     return filenames
-
   end
 end

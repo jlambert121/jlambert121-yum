@@ -122,10 +122,10 @@ This module is only relavent on RedHat-based machines.
 
 ## Development
 
-Improvements and bug fixes are greatly appreciated.  See the [contributing guide](https://github.com/evenup/evenup-yum/CONTRIBUTING.md) for
+Improvements and bug fixes are greatly appreciated.  See the [contributing guide](https://github.com/jlambert121/jlambert121-yum/CONTRIBUTING.md) for
 information on adding and validating tests for PRs.
 
 ## Changelog / Contributors
 
-[Changelog](https://github.com/evenup/evenup-yum/CHANGELOG)
-[Contributors](https://github.com/evenup/evenup-yum/graphs/contributors)
+[Changelog](https://github.com/jlambert121/jlambert121-yum/CHANGELOG)
+[Contributors](https://github.com/jlambert121/jlambert121-yum/graphs/contributors)

@@ -43,5 +43,4 @@ describe 'yum' do
 
     it { expect { should contain_package('yum') }.to raise_error(Puppet::Error, /Debian not supported/) }
   end
-
 end
