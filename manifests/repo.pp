@@ -4,14 +4,16 @@
 #
 #
 define yum::repo (
-  $enabled    = 1,
-  $gpg_source = undef,
-  $baseurl    = undef,
-  $descr      = undef,
-  $exclude    = undef,
-  $gpgcheck   = undef,
-  $gpgkey     = undef,
-  $mirrorlist = undef,
+  $enabled        = 1,
+  $gpg_source     = undef,
+  $baseurl        = undef,
+  $descr          = undef,
+  $exclude        = undef,
+  $gpgcheck       = undef,
+  $gpgkey         = undef,
+  $mirrorlist     = undef,
+  $failovermethod = undef,
+  $priority       = undef,
 ) {
 
   if !$baseurl and !$mirrorlist {
@@ -26,13 +28,14 @@ define yum::repo (
   }
 
   yumrepo { $name:
-    enabled    => $enabled,
-    baseurl    => $baseurl,
-    descr      => $descr,
-    exclude    => $exclude,
-    gpgcheck   => $gpgcheck,
-    gpgkey     => $gpgkey,
-    mirrorlist => $mirrorlist,
+    enabled        => $enabled,
+    baseurl        => $baseurl,
+    descr          => $descr,
+    exclude        => $exclude,
+    gpgcheck       => $gpgcheck,
+    gpgkey         => $gpgkey,
+    mirrorlist     => $mirrorlist,
+    failovermethod => $failovermethod,
   }
 
   if $gpg_source and $gpg_source =~ /^puppet:/ {
