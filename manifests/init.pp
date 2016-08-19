@@ -19,12 +19,8 @@ class yum (
   validate_hash($repos)
 
   if $purge {
-    create_resources(file, hash_to_repo_file($repos) )
-
-    file { '/etc/yum.repos.d/':
-      ensure  => 'directory',
-      recurse => true,
-      purge   => true,
+    resources { 'yumrepo':
+      purge => true,
     }
   }
 

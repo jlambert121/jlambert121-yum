@@ -35,6 +35,8 @@ group :development do
   gem "travis-lint"
   gem "puppet-blacksmith"
   gem "guard-rake"
+  gem "ruby_dep", '~>1.3.1' # 1.4+ requires Ruby 2.2, and puppet<4.0 requires 2.1.x
+  gem "listen", '~>3.0.8' # 3.1+ requires Ruby 2.2, and puppet<4.0 requires 2.1.x
 end
 
 group :system_tests do
