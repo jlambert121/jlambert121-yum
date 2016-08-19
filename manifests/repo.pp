@@ -19,11 +19,6 @@ define yum::repo (
   }
 
   include ::yum
-  $purge = $::yum::purge
-
-  if $purge {
-    file { "/etc/yum.repos.d/${name}.repo": }
-  }
 
   yumrepo { $name:
     enabled    => $enabled,
